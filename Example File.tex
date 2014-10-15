@@ -1,0 +1,125 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{MatrixExt}
+\usepackage{verbatim}
+\setlength{\parindent}{0cm}
+
+
+\newcommand{\vertsp}{\vspace{0.4 in}}
+\begin{document}
+
+\section*{Linear Algebra Package}
+The package is named \begin{verbatim} MatrixExt \end{verbatim} 
+and can be used by simply typing \begin{verbatim} \usepackage{MatrixExt} \end{verbatim} 
+in the preamble of a TeX document, provided that the .sty file is available.  The package requires the use of several packages.\footnote{It requires the following packages $\{$\emph{ifthen, amsmath}$\}$}
+\vertsp
+
+{\bf Never Indent:}
+\begin{verbatim}
+
+\neverindent
+\end{verbatim}
+
+\vertsp
+
+{\bf To make "x" a bold vector:}
+\begin{verbatim}
+
+$\vec{x}$
+\end{verbatim} 
+Example: $\vec{x}$\\
+\vertsp
+
+{\bf To make a "C" in mathcal:}
+\begin{verbatim}
+
+$\mc{C}$
+\end{verbatim}
+Example: $\mc{C}$\\
+\vertsp
+
+{\bf To make a $n \times m$ matrix:}
+\begin{verbatim}
+$ \matrix{
+\end{verbatim}
+$a_1 \& a_2 \& \dots \& a_n \backslash \backslash$
+$b_1 \& b_2 \& \dots \& b_n \backslash \backslash$
+$\dots \backslash \backslash$
+$m_1 \& m_2 \& \dots \& m_n$ \$
+\vspace{10 pt}
+
+\}
+
+Example: $\matrix{a_1 & a_2 & \dots & a_n \\ b_1 & b_2 & \dots & b_n \\ \vdots & \vdots & & \vdots \\ m_1 & m_2 & \dots & m_n}$
+
+\pagebreak
+
+
+{\bf To make a $3 \times 3$ matrix augmented with an additional column:}
+\begin{verbatim}
+$\augmatrix{ccc|c}{
+\end{verbatim}
+$a \& b \& c \& d \backslash \backslash$
+$e \& f \& g \& h \backslash \backslash$
+$i \& j \& k \& l$ \$
+\vspace{10 pt}
+
+\}
+
+
+Example: {\large{ $\augmatrix{ccc|c}{a & b & c & d \\ e & f & g & h \\ i & j & k & l}$}}
+\vertsp
+
+
+{\bf To get an iterative list from 1 to an upper value, you'll want:}
+\begin{verbatim}
+$\oneton[12]{\vec{u}}{+}$
+\end{verbatim}
+This gives: $\oneton[12]{\vec{u}}{+}$\\
+
+You can also omit the upper bound (defaulting to $n$) and change the foldr connection:
+\begin{verbatim}
+$\oneton{\vec{v}}{,}$
+\end{verbatim}
+This gives: $\oneton{\vec{v}}{,}$
+
+\vertsp
+
+{\bf We have derivatives (partial and full) with optional commands for the numerator:}
+
+\begin{verbatim}
+$\deriv{x}$
+
+$\deriv[f]{x}$
+
+$\pderiv{t}$
+
+$\pderiv[y]{x}$
+\end{verbatim}
+These give, respectively,
+\begin{align*}
+&\deriv{x} &
+& \deriv[f]{x} &
+\pderiv{t}&
+& \pderiv[y]{x}&
+\end{align*}
+\vertsp
+
+
+{\bf We have my personal favorite symbol for contradiction:}
+\begin{verbatim}
+$\contradiction$
+\end{verbatim}
+Which gives: $\contradiction$
+\vertsp
+
+
+{\bf And finally, we have inner products:}
+\begin{verbatim}
+$\ip{\vec{u}}{\vec{v}}$
+\end{verbatim}
+Which gives: $\ip{\vec{u}}{\vec{v}}$
+
+
+
+\end{document}

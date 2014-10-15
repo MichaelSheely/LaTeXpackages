@@ -1,0 +1,51 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{MatrixExt}[2013/01/13 Custom Package]
+\usepackage{ifthen}
+\usepackage{amsmath}
+
+
+
+\newcommand{\neverindent}{\setlength{\parindent}{0pt}}
+
+\renewcommand{\vec}[1]{{\bf{#1}}}
+
+%%lets you access mathcal font by $\mc{X}$
+\newcommand{\mc}[1]{\ensuremath{{\mathcal{#1}}}}
+
+\renewcommand{\matrix}[1]{\ensuremath{\begin{bmatrix} #1 \end{bmatrix}}}
+
+\newcommand{\arra}[2]{ \ensuremath{
+\begin{array}{#1} %the input ccc|c would provide a nX3 matrix with a fourth column for augmented stuff
+#2 \end{array}}}
+
+\newcommand{\augmatrix}[2]{ \ensuremath{
+\left[\begin{array}{#1} %the input ccc|c would provide a nX3 matrix with a fourth column for augmented stuff
+#2 \end{array}\right]}}
+
+\newcommand{\oneton}[3][]{
+	\ifthenelse{\equal{#1}{}}
+		{\ensuremath{ {#2}_1 {#3} {#2}_2 {#3} \dots {#3} {#2}_n}}
+		{\ensuremath{ {#2}_1 {#3} {#2}_2 {#3} \dots {#3} {#2}_{#1}}}}
+
+\newcommand{\deriv}[2][]{
+	\ifthenelse{\equal{#1}{}}
+		{\ensuremath{\frac{\text{d}}{\text{d}{#2}}}}
+		{\ensuremath{\frac{\text{d}{#1}}{\text{d}{#2}}}}}
+
+\newcommand{\pderiv}[2][]{
+	\ifthenelse{\equal{#1}{}}
+		{\ensuremath{\frac{\partial}{\partial{#2}}}}
+		{\ensuremath{\frac{\partial{#1}}{\partial{#2}}}}}
+
+\newcommand{\eval}[2]{\bigg|_{#1}^{#2}}
+
+\newcommand{\evalparens}[3]{\left( #1 \right)\eval{#2}{#3}}
+
+\newcommand{\contradiction}{\ensuremath{\implies \hspace{-7pt} \impliedby}}
+
+\newcommand{\ip}[2]{\langle {#1},{#2}\rangle}
+
+%%new
+\newcommand{\ubrace}[2]{\underbrace{\text{#1}}_{\text{#2}}}
+
+\endinput

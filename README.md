@@ -9,3 +9,5 @@ I was taking a multivariable class concurrently with Linear Algebra).
 
 In addition to the .sty file, I have included a .tex file which shows examples of the various constructs and
 and how to use the file in a standard LaTeX file.
+
+Also added a much much lighter file `mdspset.sty` which will include only a few of most useful commands I use.
